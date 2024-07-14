@@ -198,7 +198,7 @@ func (app *App) RunScheduler() {
 
 	register("@every 30s", "checkIncomingTransactionsProgress", jobs.CheckIncomingTransactionsProgress, false)
 
-	register("@every 10m", "performInternalWalletTransfer", jobs.PerformInternalWalletTransfer, true)
+	register("@every 30s", "performInternalWalletTransfer", jobs.PerformInternalWalletTransfer, true)
 	register("@every 2m", "checkInternalTransferProgress", jobs.CheckInternalTransferProgress, false)
 
 	register("@every 10m", "performWithdrawalsCreation", jobs.PerformWithdrawalsCreation, true)
