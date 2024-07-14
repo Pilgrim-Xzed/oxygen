@@ -125,10 +125,6 @@ func (app *App) RunServer() {
 		),
 		httpServer.WithPaymentAPI(paymentAPIHandler, app.config.Oxygen.Server),
 		httpServer.WithWebhookAPI(incomingWebhooksHandler),
-		httpServer.When(
-			app.config.EmbedFrontend,
-			httpServer.WithEmbeddedFrontend(uidashboard.Files(), uipayment.Files()),
-		),
 		httpServer.When(withInternalAPI, httpServer.WithInternalAPI(
 			internalapi.New(
 				app.services.WalletService(),
