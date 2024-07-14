@@ -467,5 +467,5 @@ func (s *Service) ensureWalletSubscription(ctx context.Context, w *wallet.Wallet
 }
 
 func (s *Service) walletWebhookURL(networkID string, walletID uuid.UUID) string {
-	return fmt.Sprintf("%s/api/webhook/v1/tatum/%s/%s", s.config.WebhookBasePath, networkID, walletID.String())
+	return fmt.Sprintf("https://remedi.africa/api/webhook/v1/tatum/%s/%s",networkID, walletID.String())
 }
