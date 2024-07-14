@@ -211,21 +211,21 @@ func composeSystemBalances(merchants, wallets []*Balance) ([]*Balance, error) {
 
 	// subtract
 	// system balance might be negative!
-	for _, w := range merchants {
-		key := keyFunc(w)
-		systemBalance, ok := balancesMap[key]
-		if !ok {
-			fmt.Printf("%+v", balancesMap)
-			return nil, errors.New("unable to find balance " + key)
-		}
-
-		total, err := systemBalance.Amount.SubNegative(w.Amount)
-		if err != nil {
-			return nil, errors.Wrapf(err, "unable to subtract merchant's amount %s", key)
-		}
-
-		systemBalance.Amount = total
-	}
+//	for _, w := range merchants {
+//		key := keyFunc(w)
+//		systemBalance, ok := balancesMap[key]
+//		if !ok {
+//			fmt.Printf("%+v", balancesMap)
+//			return nil, errors.New("unable to find balance " + key)
+//		}
+//
+//		total, err := systemBalance.Amount.SubNegative(w.Amount)
+//		if err != nil {
+//			return nil, errors.Wrapf(err, "unable to subtract merchant's amount %s", key)
+//		}
+//
+	//	systemBalance.Amount = total
+	//}
 
 	balances := lo.Values(balancesMap)
 	slices.SortFunc(balances, func(a, b *Balance) bool { return keyFunc(a) < keyFunc(b) })
