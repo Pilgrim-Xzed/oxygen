@@ -22,8 +22,6 @@ import (
 	"github.com/oxygenpay/oxygen/internal/server/http/webhook"
 	"github.com/oxygenpay/oxygen/internal/service/user"
 	"github.com/oxygenpay/oxygen/pkg/graceful"
-	uidashboard "github.com/oxygenpay/oxygen/ui-dashboard"
-	uipayment "github.com/oxygenpay/oxygen/ui-payment"
 	"github.com/oxygenpay/oxygen/web"
 	"github.com/pkg/errors"
 	"github.com/robfig/cron/v3"
